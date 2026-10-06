@@ -1,0 +1,30 @@
+name: Validate rule pack
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Build and validate
+        run: go run ./tools/packbuild build
+      - name: Changes since the latest release
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release download --repo "$GITHUB_REPOSITORY" --pattern rules-pack.json --output previous.json 2>/dev/null; then
+            go run ./tools/packbuild diff -old previous.json -new dist/rules-pack.json | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            echo "No published release yet." | tee -a "$GITHUB_STEP_SUMMARY"
+          fi

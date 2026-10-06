@@ -1,0 +1,17 @@
+{
+  "vcpu_per_core_warn": 4,
+  "vcpu_per_core_high": 8,
+  "mem_alloc_warn_pct": 100,
+  "host_cpu_hot_pct": 80,
+  "host_mem_hot_pct": 85,
+  "ds_warn_pct": 80,
+  "ds_crit_pct": 90,
+  "ds_overprov_pct": 150,
+  "snap_age_warn_days": 3,
+  "snap_age_high_days": 30,
+  "snap_size_high_gib": 50,
+  "min_hw_version": 14,
+  "guest_free_warn_pct": 10,
+  "rightsize_active_pct": 20,
+  "rightsize_min_mem_gib": 8
+}

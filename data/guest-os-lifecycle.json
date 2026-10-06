@@ -1,0 +1,138 @@
+{
+  "exclude": [
+    "ltsc",
+    "ltsb"
+  ],
+  "entries": [
+    {
+      "label": "Windows Server 2003",
+      "pattern": "windows server 2003",
+      "end_of_support": "2015-07-14"
+    },
+    {
+      "label": "Windows Server 2008 / 2008 R2",
+      "pattern": "windows server 2008",
+      "end_of_support": "2020-01-14"
+    },
+    {
+      "label": "Windows Server 2012 / 2012 R2",
+      "pattern": "windows server 2012",
+      "end_of_support": "2023-10-10"
+    },
+    {
+      "label": "Windows Server 2016",
+      "pattern": "windows server 2016",
+      "end_of_support": "2027-01-12"
+    },
+    {
+      "label": "Windows Server 2019",
+      "pattern": "windows server 2019",
+      "end_of_support": "2029-01-09"
+    },
+    {
+      "label": "Windows XP / Vista / 2000",
+      "pattern": "windows (xp|vista|2000)\\b",
+      "end_of_support": "2014-04-08"
+    },
+    {
+      "label": "Windows 7",
+      "pattern": "windows 7\\b",
+      "end_of_support": "2020-01-14"
+    },
+    {
+      "label": "Windows 8 / 8.1",
+      "pattern": "windows 8(\\.1)?\\b",
+      "end_of_support": "2023-01-10"
+    },
+    {
+      "label": "Windows 10",
+      "pattern": "windows 10\\b",
+      "end_of_support": "2025-10-14"
+    },
+    {
+      "label": "CentOS 6 and earlier",
+      "pattern": "centos (linux )?[3-6]\\b|centos 4/5",
+      "end_of_support": "2020-11-30"
+    },
+    {
+      "label": "CentOS 7",
+      "pattern": "centos (linux )?7\\b",
+      "end_of_support": "2024-06-30"
+    },
+    {
+      "label": "CentOS Stream 8",
+      "pattern": "centos stream 8",
+      "end_of_support": "2024-05-31"
+    },
+    {
+      "label": "CentOS Linux 8",
+      "pattern": "centos (linux )?8\\b",
+      "end_of_support": "2021-12-31"
+    },
+    {
+      "label": "RHEL 5 and earlier",
+      "pattern": "red hat enterprise linux [2-5]\\b",
+      "end_of_support": "2017-03-31"
+    },
+    {
+      "label": "RHEL 6",
+      "pattern": "red hat enterprise linux 6\\b",
+      "end_of_support": "2020-11-30"
+    },
+    {
+      "label": "RHEL 7",
+      "pattern": "red hat enterprise linux 7\\b",
+      "end_of_support": "2024-06-30"
+    },
+    {
+      "label": "Oracle Linux 6 and earlier",
+      "pattern": "oracle linux [4-6]\\b",
+      "end_of_support": "2021-03-01"
+    },
+    {
+      "label": "Oracle Linux 7",
+      "pattern": "oracle linux 7\\b",
+      "end_of_support": "2024-12-31"
+    },
+    {
+      "label": "Ubuntu 14.04 and earlier",
+      "pattern": "ubuntu (linux )?1[0-4]\\.",
+      "end_of_support": "2019-04-30"
+    },
+    {
+      "label": "Ubuntu 16.04",
+      "pattern": "ubuntu (linux )?16\\.",
+      "end_of_support": "2021-04-30"
+    },
+    {
+      "label": "Ubuntu 18.04",
+      "pattern": "ubuntu (linux )?18\\.",
+      "end_of_support": "2023-05-31"
+    },
+    {
+      "label": "Ubuntu 20.04",
+      "pattern": "ubuntu (linux )?20\\.",
+      "end_of_support": "2025-05-31"
+    },
+    {
+      "label": "SLES 11 and earlier",
+      "pattern": "suse linux enterprise( server)? (9|10|11)\\b",
+      "end_of_support": "2019-03-31"
+    },
+    {
+      "label": "SLES 12",
+      "pattern": "suse linux enterprise( server)? 12\\b",
+      "end_of_support": "2024-10-31"
+    },
+    {
+      "label": "Debian 8 and earlier",
+      "pattern": "debian gnu/linux [4-8]\\b|debian [4-8]\\b",
+      "end_of_support": "2020-06-30"
+    },
+    {
+      "label": "Debian 9 / 10",
+      "pattern": "debian gnu/linux (9|10)\\b|debian (9|10)\\b",
+      "end_of_support": "2024-06-30"
+    }
+  ]
+}

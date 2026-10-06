@@ -1,0 +1,42 @@
+[
+  {
+    "version": "5.0",
+    "end_of_general_support": "2016-08-24",
+    "source": "https://support.broadcom.com/web/ecx/productlifecycle"
+  },
+  {
+    "version": "5.1",
+    "end_of_general_support": "2016-08-24",
+    "source": "https://support.broadcom.com/web/ecx/productlifecycle"
+  },
+  {
+    "version": "5.5",
+    "end_of_general_support": "2018-09-19",
+    "source": "https://support.broadcom.com/web/ecx/productlifecycle"
+  },
+  {
+    "version": "6.0",
+    "end_of_general_support": "2020-03-12",
+    "source": "https://support.broadcom.com/web/ecx/productlifecycle"
+  },
+  {
+    "version": "6.5",
+    "end_of_general_support": "2022-10-15",
+    "source": "https://support.broadcom.com/web/ecx/productlifecycle"
+  },
+  {
+    "version": "6.7",
+    "end_of_general_support": "2022-10-15",
+    "source": "https://support.broadcom.com/web/ecx/productlifecycle"
+  },
+  {
+    "version": "7.0",
+    "end_of_general_support": "2025-10-02",
+    "source": "https://support.broadcom.com/web/ecx/productlifecycle"
+  },
+  {
+    "version": "8.0",
+    "end_of_general_support": "2027-10-11",
+    "source": "https://support.broadcom.com/web/ecx/productlifecycle"
+  }
+]

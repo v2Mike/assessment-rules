@@ -1,0 +1,104 @@
+[
+  {
+    "code": "westmere",
+    "name": "Intel Xeon 5600 / E7 (Westmere)",
+    "vendor": "Intel",
+    "launch": 2010
+  },
+  {
+    "code": "sandy",
+    "name": "Intel Xeon E5 v1 (Sandy Bridge)",
+    "vendor": "Intel",
+    "launch": 2012
+  },
+  {
+    "code": "ivy",
+    "name": "Intel Xeon E5/E7 v2 (Ivy Bridge)",
+    "vendor": "Intel",
+    "launch": 2013
+  },
+  {
+    "code": "haswell",
+    "name": "Intel Xeon E5/E7 v3 (Haswell)",
+    "vendor": "Intel",
+    "launch": 2014
+  },
+  {
+    "code": "broadwell",
+    "name": "Intel Xeon E5/E7 v4 (Broadwell)",
+    "vendor": "Intel",
+    "launch": 2016
+  },
+  {
+    "code": "naples",
+    "name": "AMD EPYC 7001 (Naples)",
+    "vendor": "AMD",
+    "launch": 2017
+  },
+  {
+    "code": "skylake",
+    "name": "Intel Xeon Scalable 1st Gen (Skylake)",
+    "vendor": "Intel",
+    "launch": 2017
+  },
+  {
+    "code": "cascade",
+    "name": "Intel Xeon Scalable 2nd Gen (Cascade Lake)",
+    "vendor": "Intel",
+    "launch": 2019
+  },
+  {
+    "code": "rome",
+    "name": "AMD EPYC 7002 (Rome)",
+    "vendor": "AMD",
+    "launch": 2019
+  },
+  {
+    "code": "cooper",
+    "name": "Intel Xeon Scalable 3rd Gen (Cooper Lake)",
+    "vendor": "Intel",
+    "launch": 2020
+  },
+  {
+    "code": "icelake",
+    "name": "Intel Xeon Scalable 3rd Gen (Ice Lake)",
+    "vendor": "Intel",
+    "launch": 2021
+  },
+  {
+    "code": "milan",
+    "name": "AMD EPYC 7003 (Milan)",
+    "vendor": "AMD",
+    "launch": 2021
+  },
+  {
+    "code": "genoa",
+    "name": "AMD EPYC 9004 / 8004 (Genoa family)",
+    "vendor": "AMD",
+    "launch": 2022
+  },
+  {
+    "code": "emerald",
+    "name": "Intel Xeon Scalable 5th Gen (Emerald Rapids)",
+    "vendor": "Intel",
+    "launch": 2023
+  },
+  {
+    "code": "sapphire",
+    "name": "Intel Xeon Scalable 4th Gen (Sapphire Rapids)",
+    "vendor": "Intel",
+    "launch": 2023
+  },
+  {
+    "code": "turin",
+    "name": "AMD EPYC 9005 (Turin)",
+    "vendor": "AMD",
+    "launch": 2024
+  },
+  {
+    "code": "xeon6",
+    "name": "Intel Xeon 6 (Granite / Sierra Forest)",
+    "vendor": "Intel",
+    "launch": 2024
+  }
+]

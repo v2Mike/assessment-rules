@@ -1,0 +1,11 @@
+{
+  "unsupported_esxi8": [
+    "westmere",
+    "sandy",
+    "ivy"
+  ],
+  "deprecated": [
+    "haswell",
+    "broadwell"
+  ]
+}

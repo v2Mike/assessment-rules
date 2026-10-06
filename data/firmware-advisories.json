@@ -1,0 +1,138 @@
+[
+  {
+    "id": "spectre",
+    "name": "Spectre / Meltdown",
+    "cves": [
+      "CVE-2017-5715",
+      "CVE-2017-5754"
+    ],
+    "families": [
+      "westmere",
+      "sandy",
+      "ivy",
+      "haswell",
+      "broadwell",
+      "skylake"
+    ],
+    "disclosed": "2018-01-03"
+  },
+  {
+    "id": "l1tf",
+    "name": "L1 Terminal Fault (Foreshadow)",
+    "cves": [
+      "CVE-2018-3646"
+    ],
+    "families": [
+      "westmere",
+      "sandy",
+      "ivy",
+      "haswell",
+      "broadwell",
+      "skylake"
+    ],
+    "disclosed": "2018-08-14"
+  },
+  {
+    "id": "mds",
+    "name": "Microarchitectural Data Sampling (MDS)",
+    "cves": [
+      "CVE-2018-12126",
+      "CVE-2018-12127",
+      "CVE-2018-12130",
+      "CVE-2019-11091"
+    ],
+    "families": [
+      "westmere",
+      "sandy",
+      "ivy",
+      "haswell",
+      "broadwell",
+      "skylake"
+    ],
+    "disclosed": "2019-05-14"
+  },
+  {
+    "id": "taa",
+    "name": "TSX Asynchronous Abort",
+    "cves": [
+      "CVE-2019-11135"
+    ],
+    "families": [
+      "skylake",
+      "cascade"
+    ],
+    "disclosed": "2019-11-12"
+  },
+  {
+    "id": "downfall",
+    "name": "Downfall (Gather Data Sampling)",
+    "cves": [
+      "CVE-2022-40982"
+    ],
+    "families": [
+      "skylake",
+      "cascade",
+      "cooper",
+      "icelake"
+    ],
+    "disclosed": "2023-08-08"
+  },
+  {
+    "id": "reptar",
+    "name": "Reptar",
+    "cves": [
+      "CVE-2023-23583"
+    ],
+    "families": [
+      "icelake",
+      "sapphire"
+    ],
+    "disclosed": "2023-11-14"
+  },
+  {
+    "id": "zenbleed",
+    "name": "Zenbleed",
+    "cves": [
+      "CVE-2023-20593"
+    ],
+    "families": [
+      "rome"
+    ],
+    "disclosed": "2023-07-24"
+  },
+  {
+    "id": "inception",
+    "name": "Inception (SRSO)",
+    "cves": [
+      "CVE-2023-20569"
+    ],
+    "families": [
+      "milan",
+      "genoa"
+    ],
+    "disclosed": "2023-08-08"
+  },
+  {
+    "id": "sinkclose",
+    "name": "Sinkclose (SMM lock bypass)",
+    "cves": [
+      "CVE-2023-31315"
+    ],
+    "families": [
+      "naples",
+      "rome",
+      "milan",
+      "genoa"
+    ],
+    "disclosed": "2024-08-09"
+  },
+  {
+    "id": "logofail",
+    "name": "LogoFAIL (UEFI image parsers)",
+    "cves": [
+      "CVE-2023-40238"
+    ],
+    "note": "and related",
+    "disclosed": "2023-12-06"
+  }
+]

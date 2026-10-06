@@ -1,0 +1,65 @@
+name: Release rule pack
+
+# Publishes a signed release whenever main has a manifest version that hasn't
+# been released yet. To release: bump manifest.json "version", add the entry
+# to RULES-CHANGELOG.md, and merge to main.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency: release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Version
+        id: v
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version=$(go run ./tools/packbuild version)
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          if gh release view "$version" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "$version is already released; nothing to do." >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Build, sign, and verify
+        if: steps.v.outputs.exists != 'true'
+        env:
+          RULES_SIGNING_KEY: ${{ secrets.RULES_SIGNING_KEY }}
+        run: |
+          go run ./tools/packbuild build
+          go run ./tools/packbuild sign
+          go run ./tools/packbuild verify -pub "$(grep -v '^#' keys/release-key.pub)"
+      - name: Release notes
+        if: steps.v.outputs.exists != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.v.outputs.version }}
+        run: |
+          # This version's changelog section, then a summary of data changes.
+          awk -v v="## $VERSION" 'index($0, v) == 1 {on=1; next} on && /^## / {exit} on' RULES-CHANGELOG.md > notes.md
+          if gh release download --repo "$GITHUB_REPOSITORY" --pattern rules-pack.json --output previous.json 2>/dev/null; then
+            echo >> notes.md
+            go run ./tools/packbuild diff -old previous.json -new dist/rules-pack.json >> notes.md
+          fi
+          echo >> notes.md
+          echo "Signed with key \`1180921ecfd58806\` (keys/release-key.pub)." >> notes.md
+      - name: Publish
+        if: steps.v.outputs.exists != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.v.outputs.version }}
+        run: |
+          gh release create "$VERSION" dist/rules-pack.json dist/rules-pack.json.sig \
+            --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --title "Rule pack $VERSION" --notes-file notes.md --latest
+          echo "Published $VERSION" >> "$GITHUB_STEP_SUMMARY"

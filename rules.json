@@ -1,0 +1,437 @@
+{
+  "bios-advisories": {
+    "name": "Host BIOS predates fixes for known CPU and firmware vulnerabilities",
+    "category": "Hardware & Firmware",
+    "enabled": true
+  },
+  "bios-age": {
+    "name": "Host BIOS firmware more than 3 years old",
+    "category": "Hardware & Firmware",
+    "enabled": true
+  },
+  "bios-drift": {
+    "name": "Inconsistent BIOS versions on identical hosts",
+    "category": "Hardware & Firmware",
+    "enabled": true
+  },
+  "cdrom": {
+    "name": "Connected CD/DVD devices",
+    "category": "Operational Hygiene",
+    "enabled": true
+  },
+  "consolidation": {
+    "name": "VM disks need consolidation",
+    "category": "Storage",
+    "enabled": true
+  },
+  "cpu-deprecated": {
+    "name": "Host CPUs on Broadcom's deprecation list",
+    "category": "Hardware & Firmware",
+    "enabled": true
+  },
+  "cpu-esxi8": {
+    "name": "Host CPUs are too old for supported ESXi releases",
+    "category": "Hardware & Firmware",
+    "enabled": true
+  },
+  "cpu-overcommit": {
+    "name": "CPU overcommit is above the recommended ratio",
+    "category": "Capacity & Performance",
+    "enabled": true
+  },
+  "cpu-overcommit-high": {
+    "name": "CPU is heavily overcommitted",
+    "category": "Capacity & Performance",
+    "enabled": true
+  },
+  "dead-paths": {
+    "name": "Dead storage paths",
+    "category": "Storage",
+    "enabled": true
+  },
+  "drs-disabled": {
+    "name": "DRS is disabled on clusters",
+    "category": "Availability & Resiliency",
+    "enabled": true
+  },
+  "drs-partial": {
+    "name": "DRS is not fully automated",
+    "category": "Availability & Resiliency",
+    "enabled": true
+  },
+  "ds-critical": {
+    "name": "Datastores above 90% capacity",
+    "category": "Storage",
+    "enabled": true
+  },
+  "ds-inaccessible": {
+    "name": "Inaccessible datastores",
+    "category": "Storage",
+    "enabled": true
+  },
+  "ds-overprov": {
+    "name": "Thin-provisioned datastores are heavily overcommitted",
+    "category": "Storage",
+    "enabled": true
+  },
+  "ds-partial": {
+    "name": "Shared datastores not mounted on every host in the cluster",
+    "category": "Storage",
+    "enabled": true
+  },
+  "ds-warning": {
+    "name": "Datastores above 80% capacity",
+    "category": "Storage",
+    "enabled": true
+  },
+  "dvs-version": {
+    "name": "Distributed switch version behind the hosts",
+    "category": "Networking",
+    "enabled": true
+  },
+  "esxi-build-drift": {
+    "name": "Hosts in a cluster run different ESXi builds",
+    "category": "Lifecycle & Support",
+    "enabled": true
+  },
+  "esxi-eol": {
+    "name": "ESXi hosts are past end of general support",
+    "category": "Lifecycle & Support",
+    "enabled": true
+  },
+  "esxi-eol-soon": {
+    "name": "ESXi hosts approaching end of general support",
+    "category": "Lifecycle & Support",
+    "enabled": true
+  },
+  "esxi-mixed": {
+    "name": "Mixed ESXi versions within clusters",
+    "category": "Lifecycle & Support",
+    "enabled": true
+  },
+  "evc-mixed": {
+    "name": "Mixed CPU generations without EVC",
+    "category": "Availability & Resiliency",
+    "enabled": true
+  },
+  "guest-disk": {
+    "name": "Guest file systems low on free space",
+    "category": "Storage",
+    "enabled": true
+  },
+  "guest-eol": {
+    "name": "VMs running end-of-life operating systems",
+    "category": "Lifecycle & Support",
+    "enabled": true
+  },
+  "guest-eol-soon": {
+    "name": "Operating systems approaching end of support",
+    "category": "Lifecycle & Support",
+    "enabled": true
+  },
+  "ha-admission": {
+    "name": "HA admission control is disabled",
+    "category": "Availability & Resiliency",
+    "enabled": true
+  },
+  "ha-disabled": {
+    "name": "vSphere HA is disabled on clusters",
+    "category": "Availability & Resiliency",
+    "enabled": true
+  },
+  "ha-host-monitoring": {
+    "name": "HA host monitoring is disabled",
+    "category": "Availability & Resiliency",
+    "enabled": true
+  },
+  "half-duplex": {
+    "name": "Physical NICs running at half duplex",
+    "category": "Networking",
+    "enabled": true
+  },
+  "host-config-status": {
+    "name": "Hosts with configuration alarms",
+    "category": "Operational Hygiene",
+    "enabled": true
+  },
+  "host-dns": {
+    "name": "Hosts without redundant DNS servers",
+    "category": "Security & Configuration",
+    "enabled": true
+  },
+  "host-hot": {
+    "name": "Hosts running at high utilization",
+    "category": "Capacity & Performance",
+    "enabled": true
+  },
+  "host-mem-skew": {
+    "name": "Uneven host memory within clusters",
+    "category": "Capacity & Performance",
+    "enabled": true
+  },
+  "host-uptime": {
+    "name": "Hosts not rebooted in over a year",
+    "category": "Lifecycle & Support",
+    "enabled": true
+  },
+  "ht-disabled": {
+    "name": "Hyperthreading available but not active",
+    "category": "Capacity & Performance",
+    "enabled": true
+  },
+  "hw-age": {
+    "name": "Server platforms are 10 or more years old",
+    "category": "Hardware & Firmware",
+    "enabled": true
+  },
+  "hw-age-soon": {
+    "name": "Server platforms at or near end of support",
+    "category": "Hardware & Firmware",
+    "enabled": true
+  },
+  "hw-eos": {
+    "name": "Server hardware is past vendor end of support",
+    "category": "Hardware & Firmware",
+    "enabled": true
+  },
+  "hw-version": {
+    "name": "Outdated VM hardware versions",
+    "category": "Lifecycle & Support",
+    "enabled": true
+  },
+  "idle-capacity": {
+    "name": "Idle hosts still count toward licensing and support",
+    "category": "Capacity & Performance",
+    "enabled": true
+  },
+  "legacy-nic": {
+    "name": "VMs using emulated network adapters",
+    "category": "Capacity & Performance",
+    "enabled": true
+  },
+  "license-expiry": {
+    "name": "VMware licenses expired or expiring within 90 days",
+    "category": "Lifecycle & Support",
+    "enabled": true
+  },
+  "mem-overcommit": {
+    "name": "Memory is overcommitted",
+    "category": "Capacity & Performance",
+    "enabled": true
+  },
+  "n-plus-1": {
+    "name": "Clusters cannot absorb a host failure (N+1)",
+    "category": "Availability & Resiliency",
+    "enabled": true
+  },
+  "nic-1g": {
+    "name": "Hosts limited to 1 GbE networking",
+    "category": "Capacity & Performance",
+    "enabled": true
+  },
+  "notify-switches": {
+    "name": "Notify Switches disabled on port groups",
+    "category": "Networking",
+    "enabled": true
+  },
+  "ntp": {
+    "name": "Hosts without working NTP time synchronization",
+    "category": "Security & Configuration",
+    "enabled": true
+  },
+  "power-policy": {
+    "name": "Host power management favors energy savings over performance",
+    "category": "Capacity & Performance",
+    "enabled": true
+  },
+  "powered-off": {
+    "name": "Powered-off VMs consuming storage",
+    "category": "Operational Hygiene",
+    "enabled": true
+  },
+  "psp-policy": {
+    "name": "Multipath devices not using Round Robin",
+    "category": "Storage",
+    "enabled": true
+  },
+  "rightsize-memory": {
+    "name": "Memory right-sizing opportunities",
+    "category": "Capacity & Performance",
+    "enabled": true
+  },
+  "rp-limits": {
+    "name": "Resource pools with hard limits",
+    "category": "Capacity & Performance",
+    "enabled": true
+  },
+  "rvtools-health": {
+    "name": "RVTools health check messages",
+    "category": "Operational Hygiene",
+    "enabled": true
+  },
+  "single-host": {
+    "name": "Workloads run on single-host clusters or standalone hosts",
+    "category": "Availability & Resiliency",
+    "enabled": true
+  },
+  "single-path": {
+    "name": "Storage devices with a single path",
+    "category": "Storage",
+    "enabled": true
+  },
+  "single-uplink": {
+    "name": "Virtual switches with a single physical uplink",
+    "category": "Networking",
+    "enabled": true
+  },
+  "snap-old": {
+    "name": "Long-lived or very large VM snapshots",
+    "category": "Storage",
+    "enabled": true
+  },
+  "snap-warn": {
+    "name": "Snapshots older than 72 hours",
+    "category": "Storage",
+    "enabled": true
+  },
+  "tools-missing": {
+    "name": "VMware Tools not installed or not running",
+    "category": "Operational Hygiene",
+    "enabled": true
+  },
+  "tools-outdated": {
+    "name": "VMware Tools out of date",
+    "category": "Operational Hygiene",
+    "enabled": true
+  },
+  "uplink-down": {
+    "name": "Physical uplinks with no link",
+    "category": "Networking",
+    "enabled": true
+  },
+  "uplink-speed-mix": {
+    "name": "Uplinks of different speeds in the same team",
+    "category": "Networking",
+    "enabled": true
+  },
+  "vcenter-eol": {
+    "name": "vCenter Server is past end of general support",
+    "category": "Lifecycle & Support",
+    "enabled": true
+  },
+  "vlan-trunk": {
+    "name": "Port groups trunk all VLANs to VMs (VLAN 4095)",
+    "category": "Security & Configuration",
+    "enabled": true
+  },
+  "vm-ballooning": {
+    "name": "VMs have active memory ballooning",
+    "category": "Capacity & Performance",
+    "enabled": true
+  },
+  "vm-cbt": {
+    "name": "VMs without Changed Block Tracking",
+    "category": "Operational Hygiene",
+    "enabled": true
+  },
+  "vm-config-status": {
+    "name": "VMs with red configuration status",
+    "category": "Operational Hygiene",
+    "enabled": true
+  },
+  "vm-hotadd": {
+    "name": "CPU hot-add enabled on large VMs",
+    "category": "Capacity & Performance",
+    "enabled": true
+  },
+  "vm-independent-disks": {
+    "name": "Independent disks excluded from snapshots and backups",
+    "category": "Operational Hygiene",
+    "enabled": true
+  },
+  "vm-legacy-scsi": {
+    "name": "VMs using legacy SCSI controllers",
+    "category": "Capacity & Performance",
+    "enabled": true
+  },
+  "vm-limits": {
+    "name": "VMs with CPU or memory limits",
+    "category": "Capacity & Performance",
+    "enabled": true
+  },
+  "vm-local-ds": {
+    "name": "Clustered VMs stored on a single host's datastore",
+    "category": "Availability & Resiliency",
+    "enabled": true
+  },
+  "vm-nic-disconnected": {
+    "name": "Powered-on VMs with disconnected network adapters",
+    "category": "Operational Hygiene",
+    "enabled": true
+  },
+  "vm-orphaned": {
+    "name": "Orphaned or inaccessible VMs",
+    "category": "Operational Hygiene",
+    "enabled": true
+  },
+  "vm-rdm": {
+    "name": "VMs using raw device mappings",
+    "category": "Storage",
+    "enabled": true
+  },
+  "vm-secure-boot": {
+    "name": "Modern guests without UEFI Secure Boot",
+    "category": "Security & Configuration",
+    "enabled": true
+  },
+  "vm-sockets": {
+    "name": "Large VMs configured as many single-core sockets",
+    "category": "Capacity & Performance",
+    "enabled": true
+  },
+  "vm-swapping": {
+    "name": "VMs are being swapped by the hypervisor",
+    "category": "Capacity & Performance",
+    "enabled": true
+  },
+  "vm-usb": {
+    "name": "USB devices connected to VMs",
+    "category": "Security & Configuration",
+    "enabled": true
+  },
+  "vm-wide": {
+    "name": "VMs larger than one NUMA node",
+    "category": "Capacity & Performance",
+    "enabled": true
+  },
+  "vmfs5": {
+    "name": "Datastores still on VMFS-5",
+    "category": "Storage",
+    "enabled": true
+  },
+  "vmk-mtu-drift": {
+    "name": "Inconsistent VMkernel MTU across hosts in a cluster",
+    "category": "Networking",
+    "enabled": true
+  },
+  "vmk-mtu-switch": {
+    "name": "VMkernel MTU larger than its virtual switch MTU",
+    "category": "Networking",
+    "enabled": true
+  },
+  "vss-mtu-drift": {
+    "name": "Standard vSwitch MTU differs between hosts",
+    "category": "Networking",
+    "enabled": true
+  },
+  "vswitch-security": {
+    "name": "Virtual switch security policies allow Layer 2 attacks",
+    "category": "Security & Configuration",
+    "enabled": true
+  },
+  "zombie-files": {
+    "name": "Orphaned (zombie) virtual disk files on datastores",
+    "category": "Storage",
+    "enabled": true
+  }
+}
