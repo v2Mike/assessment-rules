@@ -369,6 +369,11 @@
     "category": "Operational Hygiene",
     "enabled": true
   },
+  "vm-nic-start-disconnected": {
+    "name": "Network adapters that won't reconnect after a power cycle",
+    "category": "Availability & Resiliency",
+    "enabled": true
+  },
   "vm-orphaned": {
     "name": "Orphaned or inaccessible VMs",
     "category": "Operational Hygiene",

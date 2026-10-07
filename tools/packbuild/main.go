@@ -387,7 +387,7 @@ func diff(oldPath, newPath string) {
 	for _, a := range n.Advisories {
 		if prev, ok := oa[a.ID]; !ok {
 			adv = append(adv, fmt.Sprintf("added %s (%s, disclosed %s)", a.Name, strings.Join(a.CVEs, ", "), a.Disclosed))
-		} else if fmt.Sprint(prev) != fmt.Sprint(a) {
+		} else if !sameJSON(prev, a) {
 			adv = append(adv, "changed "+a.Name)
 		}
 		delete(oa, a.ID)
@@ -409,7 +409,7 @@ func diff(oldPath, newPath string) {
 		switch {
 		case !ok:
 			rl = append(rl, "added "+id)
-		case fmt.Sprint(prev) != fmt.Sprint(r):
+		case !sameJSON(prev, r):
 			rl = append(rl, "changed "+id)
 		}
 	}
@@ -435,4 +435,12 @@ func diff(oldPath, newPath string) {
 	if len(adv)+len(th)+len(rl)+len(gs) == 0 {
 		fmt.Println("No changes to advisories, thresholds, rules, or guest OS dates.")
 	}
+}
+
+// sameJSON compares values by their JSON form (pointer fields such as
+// "enabled" would otherwise compare by address).
+func sameJSON(a, b any) bool {
+	x, _ := json.Marshal(a)
+	y, _ := json.Marshal(b)
+	return bytes.Equal(x, y)
 }

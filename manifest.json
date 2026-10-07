@@ -1,7 +1,7 @@
 {
-  "version": "R2026.10.06.1",
+  "version": "R2026.10.06.2",
   "schema": 1,
   "min_app": "26.10.001",
   "published": "2026-10-06",
-  "description": "Initial pack: the reference data and rule settings previously compiled into the app."
+  "description": "Adds a check for network adapters that are connected now but won't reconnect at power-on."
 }

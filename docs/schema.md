@@ -80,7 +80,7 @@ All of these are required:
 
 ## rules
 
-Keyed by rule ID. Every rule the application can report is listed with its `name` and `category`; the application's tests fail if one is missing. Optional overrides:
+Keyed by rule ID. Every rule the application can report is listed with its `name` and `category`; the application's tests fail if one is missing. A check reports only when the pack lists it, so new checks reach an assessment through a pack: an assessment pinned to an older pack keeps its exact results until someone applies the newer pack. When the application gains a new check, add its ID here in the same release. Optional overrides:
 
 | Field | Values |
 |---|---|
