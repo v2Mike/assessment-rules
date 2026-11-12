@@ -34,6 +34,7 @@ type pack struct {
 	CPUGenerations    []cpuGen              `json:"cpu_generations"`
 	CPUSupport        cpuSupport            `json:"cpu_support"`
 	Advisories        []advisory            `json:"firmware_advisories"`
+	PatchAdvisories   []patchAdvisory       `json:"patch_advisories,omitempty"`
 	HardwareLifecycle []json.RawMessage     `json:"hardware_lifecycle"`
 	Thresholds        map[string]float64    `json:"thresholds"`
 	Rules             map[string]ruleConfig `json:"rules"`
@@ -78,6 +79,28 @@ type advisory struct {
 	Families  []string `json:"families,omitempty"`
 	Disclosed string   `json:"disclosed"`
 	URL       string   `json:"url,omitempty"`
+}
+
+// patchAdvisory is a VMware security advisory with the first fixed build per
+// ESXi or vCenter update line (rules esxi-patch and vcenter-patch).
+type patchAdvisory struct {
+	ID        string       `json:"id"`
+	VMSA      string       `json:"vmsa"`
+	Product   string       `json:"product"`
+	Summary   string       `json:"summary"`
+	CVEs      []string     `json:"cves"`
+	CVSS      float64      `json:"cvss"`
+	Exploited bool         `json:"exploited,omitempty"`
+	Published string       `json:"published"`
+	URL       string       `json:"url,omitempty"`
+	Fixed     []fixedBuild `json:"fixed"`
+	NoFix     []string     `json:"no_fix,omitempty"`
+}
+
+type fixedBuild struct {
+	Version string `json:"version"`
+	Build   int    `json:"build"`
+	Release string `json:"release"`
 }
 
 type ruleConfig struct {
@@ -157,6 +180,7 @@ func build(out string) {
 	readJSON("data/cpu-generations.json", &p.CPUGenerations)
 	readJSON("data/cpu-support.json", &p.CPUSupport)
 	readJSON("data/firmware-advisories.json", &p.Advisories)
+	readJSON("data/patch-advisories.json", &p.PatchAdvisories)
 	readJSON("data/hardware-lifecycle.json", &p.HardwareLifecycle)
 	readJSON("thresholds.json", &p.Thresholds)
 	readJSON("rules.json", &p.Rules)
@@ -266,6 +290,49 @@ func validate(p *pack) []string {
 			}
 		}
 		date("firmware advisory "+a.ID, a.Disclosed)
+	}
+	reVMSA := regexp.MustCompile(`^VMSA-\d{4}-\d{4}$`)
+	reUpdate := regexp.MustCompile(`^\d+\.\d+\.\d+$`)
+	reMajor := regexp.MustCompile(`^\d+\.\d+$`)
+	pids := map[string]bool{}
+	for _, a := range p.PatchAdvisories {
+		if a.ID == "" || pids[a.ID] {
+			add("patch advisory %q: id is missing or listed twice", a.ID)
+		}
+		pids[a.ID] = true
+		if !reVMSA.MatchString(a.VMSA) {
+			add("patch advisory %q: vmsa %q must look like VMSA-2026-0006", a.ID, a.VMSA)
+		}
+		if a.Product != "esxi" && a.Product != "vcenter" {
+			add("patch advisory %q: product must be esxi or vcenter", a.ID)
+		}
+		if len(a.CVEs) == 0 || a.CVSS <= 0 || a.CVSS > 10 {
+			add("patch advisory %q needs CVEs and a CVSS score", a.ID)
+		}
+		for _, c := range a.CVEs {
+			if !reCVE.MatchString(c) {
+				add("patch advisory %q: %q is not a CVE ID", a.ID, c)
+			}
+		}
+		date("patch advisory "+a.ID, a.Published)
+		if len(a.Fixed)+len(a.NoFix) == 0 {
+			add("patch advisory %q lists no fixed builds", a.ID)
+		}
+		lines := map[string]bool{}
+		for _, f := range a.Fixed {
+			if !reUpdate.MatchString(f.Version) || f.Build <= 0 || f.Release == "" {
+				add("patch advisory %q: fixed entries need a major.minor.update version, a build, and a release name", a.ID)
+			}
+			if lines[f.Version] {
+				add("patch advisory %q: version %s is listed twice", a.ID, f.Version)
+			}
+			lines[f.Version] = true
+		}
+		for _, v := range a.NoFix {
+			if !reMajor.MatchString(v) {
+				add("patch advisory %q: no_fix entries are major.minor versions", a.ID)
+			}
+		}
 	}
 	for _, raw := range p.HardwareLifecycle {
 		var h struct {
@@ -396,6 +463,23 @@ func diff(oldPath, newPath string) {
 		adv = append(adv, "removed "+a.Name)
 	}
 	section("Firmware advisories", adv)
+	var pa []string
+	op := map[string]patchAdvisory{}
+	for _, a := range o.PatchAdvisories {
+		op[a.ID] = a
+	}
+	for _, a := range n.PatchAdvisories {
+		if prev, ok := op[a.ID]; !ok {
+			pa = append(pa, fmt.Sprintf("added %s %s (%s, CVSS %.1f)", a.VMSA, a.Product, strings.Join(a.CVEs, ", "), a.CVSS))
+		} else if !sameJSON(prev, a) {
+			pa = append(pa, "changed "+a.ID)
+		}
+		delete(op, a.ID)
+	}
+	for id := range op {
+		pa = append(pa, "removed "+id)
+	}
+	section("VMware patch advisories", pa)
 	var th []string
 	for k, v := range n.Thresholds {
 		if ov, ok := o.Thresholds[k]; !ok || ov != v {

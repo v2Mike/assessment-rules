@@ -30,6 +30,16 @@
       "end_of_support": "2029-01-09"
     },
     {
+      "label": "Windows Server 2022",
+      "pattern": "windows server 2022",
+      "end_of_support": "2031-10-14"
+    },
+    {
+      "label": "Windows Server 2025",
+      "pattern": "windows server 2025",
+      "end_of_support": "2034-11-14"
+    },
+    {
       "label": "Windows XP / Vista / 2000",
       "pattern": "windows (xp|vista|2000)\\b",
       "end_of_support": "2014-04-08"
@@ -85,6 +95,16 @@
       "end_of_support": "2024-06-30"
     },
     {
+      "label": "RHEL 8",
+      "pattern": "red hat enterprise linux 8\\b",
+      "end_of_support": "2029-05-31"
+    },
+    {
+      "label": "RHEL 9",
+      "pattern": "red hat enterprise linux 9\\b",
+      "end_of_support": "2032-05-31"
+    },
+    {
       "label": "Oracle Linux 6 and earlier",
       "pattern": "oracle linux [4-6]\\b",
       "end_of_support": "2021-03-01"
@@ -93,6 +113,11 @@
       "label": "Oracle Linux 7",
       "pattern": "oracle linux 7\\b",
       "end_of_support": "2024-12-31"
+    },
+    {
+      "label": "Oracle Linux 8",
+      "pattern": "oracle linux 8\\b",
+      "end_of_support": "2029-07-31"
     },
     {
       "label": "Ubuntu 14.04 and earlier",
@@ -115,6 +140,16 @@
       "end_of_support": "2025-05-31"
     },
     {
+      "label": "Ubuntu 22.04",
+      "pattern": "ubuntu (linux )?22\\.",
+      "end_of_support": "2027-05-31"
+    },
+    {
+      "label": "Ubuntu 24.04",
+      "pattern": "ubuntu (linux )?24\\.",
+      "end_of_support": "2029-05-31"
+    },
+    {
       "label": "SLES 11 and earlier",
       "pattern": "suse linux enterprise( server)? (9|10|11)\\b",
       "end_of_support": "2019-03-31"
@@ -125,6 +160,11 @@
       "end_of_support": "2024-10-31"
     },
     {
+      "label": "SLES 15",
+      "pattern": "suse linux enterprise( server)? 15\\b",
+      "end_of_support": "2031-07-31"
+    },
+    {
       "label": "Debian 8 and earlier",
       "pattern": "debian gnu/linux [4-8]\\b|debian [4-8]\\b",
       "end_of_support": "2020-06-30"
@@ -133,6 +173,16 @@
       "label": "Debian 9 / 10",
       "pattern": "debian gnu/linux (9|10)\\b|debian (9|10)\\b",
       "end_of_support": "2024-06-30"
+    },
+    {
+      "label": "Debian 11",
+      "pattern": "debian gnu/linux 11\\b|debian 11\\b",
+      "end_of_support": "2026-08-31"
+    },
+    {
+      "label": "Debian 12",
+      "pattern": "debian gnu/linux 12\\b|debian 12\\b",
+      "end_of_support": "2028-06-30"
     }
   ]
 }

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "VMSA-2024-0019/vcenter",
+    "vmsa": "VMSA-2024-0019",
+    "product": "vcenter",
+    "summary": "vCenter DCERPC heap overflow (remote code execution) and privilege escalation",
+    "cves": ["CVE-2024-38812", "CVE-2024-38813"],
+    "cvss": 9.8,
+    "exploited": true,
+    "published": "2024-09-17",
+    "fixed": [
+      {"version": "8.0.3", "build": 24322831, "release": "vCenter 8.0 Update 3d"},
+      {"version": "8.0.2", "build": 24321653, "release": "vCenter 8.0 Update 2e"},
+      {"version": "7.0.3", "build": 24322018, "release": "vCenter 7.0 Update 3t"}
+    ]
+  },
+  {
+    "id": "VMSA-2025-0004/esxi",
+    "vmsa": "VMSA-2025-0004",
+    "product": "esxi",
+    "summary": "ESXi VMCI and HGFS flaws that allow escape from a VM to the host",
+    "cves": ["CVE-2025-22224", "CVE-2025-22225", "CVE-2025-22226"],
+    "cvss": 9.3,
+    "exploited": true,
+    "published": "2025-03-04",
+    "fixed": [
+      {"version": "8.0.3", "build": 24585383, "release": "ESXi 8.0 Update 3d"},
+      {"version": "8.0.2", "build": 24585300, "release": "ESXi 8.0 Update 2d"},
+      {"version": "7.0.3", "build": 24585291, "release": "ESXi 7.0 Update 3s"}
+    ]
+  },
+  {
+    "id": "VMSA-2025-0013/esxi",
+    "vmsa": "VMSA-2025-0013",
+    "product": "esxi",
+    "summary": "ESXi VMXNET3, VMCI, and PVSCSI flaws that allow escape from a VM to the host",
+    "cves": ["CVE-2025-41236", "CVE-2025-41237", "CVE-2025-41238"],
+    "cvss": 9.3,
+    "published": "2025-07-15",
+    "fixed": [
+      {"version": "8.0.3", "build": 24784735, "release": "ESXi 8.0 Update 3f"},
+      {"version": "8.0.2", "build": 24789317, "release": "ESXi 8.0 Update 2e"},
+      {"version": "7.0.3", "build": 24784741, "release": "ESXi 7.0 Update 3w"}
+    ]
+  },
+  {
+    "id": "VMSA-2026-0006/esxi",
+    "vmsa": "VMSA-2026-0006",
+    "product": "esxi",
+    "summary": "ESX VMXNET3 out-of-bounds write that allows escape from a VM to the host, plus VM deployment and logging flaws",
+    "cves": ["CVE-2026-47876", "CVE-2026-41703", "CVE-2026-41709"],
+    "cvss": 9.3,
+    "published": "2026-07-29",
+    "url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017",
+    "fixed": [
+      {"version": "9.1.0", "build": 25557999, "release": "ESX 9.1.0.0200"},
+      {"version": "9.0.2", "build": 25595025, "release": "ESX 9.0.2.0100"},
+      {"version": "8.0.3", "build": 25595708, "release": "ESXi 8.0 Update 3k"},
+      {"version": "8.0.2", "build": 25626445, "release": "ESXi 8.0 Update 2f"}
+    ],
+    "no_fix": ["7.0"]
+  },
+  {
+    "id": "VMSA-2026-0006/vcenter",
+    "vmsa": "VMSA-2026-0006",
+    "product": "vcenter",
+    "summary": "vCenter Directory Service authentication bypass and Syslog directory traversal",
+    "cves": ["CVE-2026-59309", "CVE-2026-59310"],
+    "cvss": 9.8,
+    "published": "2026-07-29",
+    "url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017",
+    "fixed": [
+      {"version": "9.1.0", "build": 25629530, "release": "vCenter 9.1.0.0300"},
+      {"version": "9.0.2", "build": 25629525, "release": "vCenter 9.0.2.0100"},
+      {"version": "8.0.3", "build": 25600417, "release": "vCenter 8.0 Update 3k"},
+      {"version": "8.0.2", "build": 25624321, "release": "vCenter 8.0 Update 2f"}
+    ],
+    "no_fix": ["7.0"]
+  }
+]

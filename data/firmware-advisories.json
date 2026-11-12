@@ -134,5 +134,77 @@
     ],
     "note": "and related",
     "disclosed": "2023-12-06"
+  },
+  {
+    "id": "entrysign",
+    "name": "EntrySign (AMD microcode signature verification)",
+    "cves": [
+      "CVE-2024-56161",
+      "CVE-2024-36347"
+    ],
+    "families": [
+      "naples",
+      "rome",
+      "milan",
+      "genoa",
+      "turin"
+    ],
+    "disclosed": "2025-03-05",
+    "url": "https://www.amd.com/en/resources/product-security/bulletin/amd-sb-7033.html"
+  },
+  {
+    "id": "its",
+    "name": "Indirect Target Selection (ITS)",
+    "cves": [
+      "CVE-2024-28956"
+    ],
+    "families": [
+      "cascade",
+      "cooper",
+      "icelake"
+    ],
+    "disclosed": "2025-05-13",
+    "url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01153.html"
+  },
+  {
+    "id": "tsa",
+    "name": "Transient Scheduler Attacks (TSA)",
+    "cves": [
+      "CVE-2024-36350",
+      "CVE-2024-36357"
+    ],
+    "families": [
+      "milan",
+      "genoa"
+    ],
+    "disclosed": "2025-07-08",
+    "url": "https://www.amd.com/en/resources/product-security/bulletin/amd-sb-7029.html"
+  },
+  {
+    "id": "intel-sa-01442",
+    "name": "Xeon firmware escalation of privilege (Intel 2026.3 IPU)",
+    "cves": [
+      "CVE-2026-20713",
+      "CVE-2026-20901"
+    ],
+    "families": [
+      "sapphire",
+      "emerald",
+      "xeon6"
+    ],
+    "disclosed": "2026-08-11",
+    "url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01442.html"
+  },
+  {
+    "id": "intel-sa-01443",
+    "name": "3rd Gen Xeon Scalable firmware denial of service (Intel 2026.3 IPU)",
+    "cves": [
+      "CVE-2026-20707"
+    ],
+    "families": [
+      "icelake"
+    ],
+    "disclosed": "2026-08-11",
+    "url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01443.html"
   }
 ]

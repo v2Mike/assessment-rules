@@ -1,7 +1,7 @@
 {
-  "version": "R2026.10.06.2",
+  "version": "R2026.11.12.1",
   "schema": 1,
   "min_app": "26.10.001",
-  "published": "2026-10-06",
-  "description": "Adds a check for network adapters that are connected now but won't reconnect at power-on."
+  "published": "2026-11-12",
+  "description": "Adds VMware patch-level checks for critical and exploited VMSAs, five CPU and firmware advisories, and current guest OS lifecycle dates."
 }

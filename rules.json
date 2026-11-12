@@ -104,6 +104,11 @@
     "category": "Lifecycle & Support",
     "enabled": true
   },
+  "esxi-patch": {
+    "name": "ESXi hosts missing critical security patches",
+    "category": "Security & Configuration",
+    "enabled": true
+  },
   "esxi-mixed": {
     "name": "Mixed ESXi versions within clusters",
     "category": "Lifecycle & Support",
@@ -317,6 +322,11 @@
   "vcenter-eol": {
     "name": "vCenter Server is past end of general support",
     "category": "Lifecycle & Support",
+    "enabled": true
+  },
+  "vcenter-patch": {
+    "name": "vCenter Server missing critical security patches",
+    "category": "Security & Configuration",
     "enabled": true
   },
   "vlan-trunk": {
